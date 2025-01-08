@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:title="Daftar Catatan Belanja"
+        android:titleTextColor="@android:color/white"
+        android:elevation="4dp" />
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang, Admin"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="16dp"
+        android:fontFamily="sans-serif-medium" />
+
+   <LinearLayout
+       android:id="@+id/tabbar"
+       android:layout_below="@id/welcome_text"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="15dp">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:orientation="horizontal"
+           android:padding="15dp"
+           android:gravity="center"
+           android:background="@color/blue">
+           <LinearLayout
+               android:layout_width="85dp"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:orientation="vertical">
+               <ImageView
+                   android:src="@drawable/ic_cari"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Cari Buku"
+                   android:textColor="@color/white"/>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="85dp"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:orientation="vertical">
+               <ImageView
+                   android:src="@drawable/ic_category"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Kategori"
+                   android:textColor="@color/white"/>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="85dp"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:orientation="vertical">
+               <ImageView
+                   android:src="@drawable/ic_add2"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Tambah"
+                   android:textColor="@color/white"/>
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="85dp"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:orientation="vertical">
+               <ImageView
+                   android:src="@drawable/ic_wishlist"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Wishlist"
+                   android:textColor="@color/white"/>
+           </LinearLayout>
+       </LinearLayout>
+   </LinearLayout>
+
+    <TextView
+        android:id="@+id/welcome_text2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Koleksi Terbaru!"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/tabbar"
+        android:layout_margin="16dp"
+        android:fontFamily="sans-serif-medium" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add2"
+        android:contentDescription="Tambah Catatan"
+        android:backgroundTint="@color/blue"
+        app:fabSize="normal" />
+
+</RelativeLayout>

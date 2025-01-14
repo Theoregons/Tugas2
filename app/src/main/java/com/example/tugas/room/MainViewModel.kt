@@ -17,10 +17,10 @@ class MainViewModel (application: Application) : AndroidViewModel(application){
     val allBook: LiveData<List<Book>> = _allBooks
 
     init {
-        fetchBook()
+        fetchBooks()
     }
 
-    private fun  fetchBook(){
+      fun fetchBooks(){
         viewModelScope.launch {
             try {
                 val books = bookDao.getAllBooks()

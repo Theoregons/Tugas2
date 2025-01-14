@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tugas.room.Book
 import com.example.tugas.room.BookAdapter
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     private val startForResultEdit = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
-            val updatedBook = result.data?.getSerializableExtra("updatedBook") as Book
+            val updatedBook = result.data?.getSerializableExtra("updatedBook") as? Book
             updatedBook.let{
                 Toast.makeText(this, "Data berhasil di edit", Toast.LENGTH_SHORT).show()
                 mainViewModel.fetchBooks()
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById(R.id.recyclerViewBooks)
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         mainViewModel.allBook.observe(this) { books ->

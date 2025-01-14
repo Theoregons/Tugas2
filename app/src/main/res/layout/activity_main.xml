@@ -21,7 +21,7 @@
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Selamat Datang, Admin"
+        android:text="Selamat Datang, Hakim"
         android:textSize="24sp"
         android:textColor="@color/black"
         android:layout_below="@id/toolbar"
@@ -40,7 +40,7 @@
            android:orientation="horizontal"
            android:padding="15dp"
            android:gravity="center"
-           android:background="@color/blue">
+           android:background="@color/green">
            <LinearLayout
                android:layout_width="85dp"
                android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Cari Buku"
+                   android:text="Menu"
                    android:textColor="@color/white"/>
            </LinearLayout>
            <LinearLayout
@@ -83,7 +83,7 @@
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Tambah"
+                   android:text="Add"
                    android:textColor="@color/white"/>
            </LinearLayout>
            <LinearLayout
@@ -98,7 +98,7 @@
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Wishlist"
+                   android:text="History"
                    android:textColor="@color/white"/>
            </LinearLayout>
        </LinearLayout>
@@ -109,23 +109,30 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Koleksi Terbaru!"
+        android:text="Menu Terbaru!"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:layout_below="@id/tabbar"
         android:layout_margin="16dp"
         android:fontFamily="sans-serif-medium" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/recyclerViewBooks"
+        android:layout_below="@id/welcome_text2"
+        />
+
+    <Button
+        android:id="@+id/fab_add"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
         android:src="@drawable/ic_add2"
-        android:contentDescription="Tambah Catatan"
-        android:backgroundTint="@color/blue"
+        android:text="+"
+        android:backgroundTint="@color/darkgreen"
         app:fabSize="normal" />
 
 </RelativeLayout>

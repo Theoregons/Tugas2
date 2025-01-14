@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel (application: Application) : AndroidViewModel(application){
@@ -27,6 +28,18 @@ class MainViewModel (application: Application) : AndroidViewModel(application){
             }catch (e: Exception){
                 _allBooks.postValue(emptyList())
             }
+        }
+    }
+
+    fun updateBook(book:Book){
+        viewModelScope.launch (Dispatchers.IO){
+            bookDao.update(book)
+        }
+    }
+
+    fun deleteBookById(id: Int){
+        viewModelScope.launch(Dispatchers.IO){
+            bookDao.deleteById(id)
         }
     }
 }

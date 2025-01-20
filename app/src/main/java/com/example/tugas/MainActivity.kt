@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById(R.id.recyclerViewBooks)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
 
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         mainViewModel.allBook.observe(this) { books ->
